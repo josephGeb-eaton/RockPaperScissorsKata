@@ -24,10 +24,12 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O0 -Wall -fprofile-arcs -ftest-coverage 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 -Wall -fprofile-arcs -ftest-coverage -fprofile-generate -Wno-unused-function")
 
 include_directories(
+  src
 )
 
 add_executable(
   test_suite
+  src/RockPaperScissors.cpp
   test/RockPaperScissors_test.cpp
 )
 
