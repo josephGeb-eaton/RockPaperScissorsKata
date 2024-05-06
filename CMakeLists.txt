@@ -58,7 +58,8 @@ add_custom_target(complexity
   COMMAND pmccabe ${complexity_list} | sort -nr | head -100)
 
 add_custom_target(run-tests DEPENDS test_suite
-  COMMAND ./test_suite
+COMMAND find . -name "*.gcda" -delete
+COMMAND ./test_suite
 )
 
 gtest_discover_tests(test_suite)
