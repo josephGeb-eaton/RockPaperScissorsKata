@@ -1,9 +1,7 @@
-#include <gtest/gtest.h>
-
+#include "gtest/gtest.h"
 #include "RockPaperScissors.h"
 
-class RockPaperScissors_test : public ::testing::Test
-{
+class RockPaperScissors_test : public ::testing::TestWithParam<std::tuple<Move, Move, Result>> {
 protected:
    void SetUp() override
    {
@@ -14,27 +12,27 @@ protected:
    }
 };
 
-TEST_F(RockPaperScissors_test, PlayerOnePlaysScissorsPlayerTwoPlaysRock_PlayerOneLoses)
+TEST_P(RockPaperScissors_test, TestRockPaperScissors)
 {
-   EXPECT_EQ(Loses, RockPaperScissors_Play(Scissors, Rock));
+   Move playerOneMove = std::get<0>(GetParam());
+   Move playerTwoMove = std::get<1>(GetParam());
+   Result expected = std::get<2>(GetParam());
+
+   EXPECT_EQ(expected, RockPaperScissors_Play(playerOneMove, playerTwoMove));
 }
 
-TEST_F(RockPaperScissors_test, PlayerOnePlaysScissorsPlayerTwoPlaysPaper_PlayerOneWins)
-{
-   EXPECT_EQ(Wins, RockPaperScissors_Play(Scissors, Paper));
-}
-
-TEST_F(RockPaperScissors_test, PlayerOnePlaysScissorsPlayerTwoPlaysScissors_Draw)
-{
-   EXPECT_EQ(Draw, RockPaperScissors_Play(Scissors, Scissors));
-}
-
-TEST_F(RockPaperScissors_test, PlayerOnePlaysRockPlayerTwoPlaysScissors_PlayerOneWins)
-{
-   EXPECT_EQ(Wins, RockPaperScissors_Play(Rock, Scissors));
-}
-
-TEST_F(RockPaperScissors_test, PlayerOnePlaysRockPlayerTwoPlaysRock_Draw)
-{
-   EXPECT_EQ(Draw, RockPaperScissors_Play(Rock, Rock));
-}
+INSTANTIATE_TEST_SUITE_P(
+   RockPaperScissorsTests,
+   RockPaperScissors_test,
+   ::testing::Values(
+      std::make_tuple(Scissors, Scissors, Draw),
+      std::make_tuple(Scissors, Rock, Loses),
+      std::make_tuple(Scissors, Paper, Wins),
+      std::make_tuple(Rock, Scissors, Wins),
+      std::make_tuple(Rock, Rock, Draw),
+      std::make_tuple(Rock, Paper, Loses),
+      std::make_tuple(Paper, Scissors, Loses),
+      std::make_tuple(Paper, Rock, Wins),
+      std::make_tuple(Paper, Paper, Draw)
+   )
+);
