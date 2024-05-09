@@ -3,7 +3,7 @@
 Result RockPaperScissors_Play(Move playerOne, Move playerTwo)
 {
     // Define the lookup table
-    Result lookupTable[3][3] = {
+    const Result lookupTable[3][3] = {
         {Draw, Loses, Wins},  // Player one chooses Scissors
         {Wins, Draw, Loses},  // Player one chooses Rock
         {Loses, Wins, Draw},  // Player one chooses Paper
