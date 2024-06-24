@@ -13,12 +13,7 @@ protected:
    }
 };
 
-TEST_F(name, Shouldrun)
-{
-   RockPaperScissorsPlay();
-}
-
-TEST_F(name, Player1shouldloseWhenplayer1PlaysScissorsAndPlayer2PlaysRock)
+TEST_F(name, Player1ShouldLoseWhenPlayer1PlaysScissorsAndPlayer2PlaysRock)
 {
    EXPECT_EQ("Lose", RockPaperScissorsPlay());
 }
