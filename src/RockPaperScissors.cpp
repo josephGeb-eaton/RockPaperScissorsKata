@@ -2,6 +2,14 @@
 #include <string>
 using namespace std;
 
-string RockPaperScissorsPlay(){
-   return "Lose";
+string RockPaperScissorsPlay(string player2)
+{
+    if (player2 == "Rock")
+    {
+        return "Lose";
+    }
+    if (player2 == "Paper")
+    {
+        return "win";
+    }
 }

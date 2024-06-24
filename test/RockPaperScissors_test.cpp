@@ -15,5 +15,10 @@ protected:
 
 TEST_F(name, Player1ShouldLoseWhenPlayer1PlaysScissorsAndPlayer2PlaysRock)
 {
-   EXPECT_EQ("Lose", RockPaperScissorsPlay());
+   EXPECT_EQ("Lose", RockPaperScissorsPlay("Rock"));
+}
+
+TEST_F(name, Player1ShouldWinWhenPlayer1PlaysScissorsAndPlayer2PlaysPaper)
+{
+   EXPECT_EQ("win", RockPaperScissorsPlay("Paper"));
 }
