@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
-
+#include "RockPaperScissors.h"
+using namespace std;
 class name : public ::testing::Test
 {
 protected:
@@ -12,7 +13,12 @@ protected:
    }
 };
 
-TEST_F(name, FirstTest)
+TEST_F(name, Shouldrun)
 {
-   FAIL() << "I ran!!!";
+   RockPaperScissorsPlay();
+}
+
+TEST_F(name, Player1shouldloseWhenplayer1PlaysScissorsAndPlayer2PlaysRock)
+{
+   EXPECT_EQ("Lose", RockPaperScissorsPlay());
 }
