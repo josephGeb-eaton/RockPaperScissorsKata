@@ -12,4 +12,8 @@ string RockPaperScissorsPlay(string player2)
     {
         return "win";
     }
+    if (player2 == "Scissors")
+    {
+        return "Tie";
+    }
 }
