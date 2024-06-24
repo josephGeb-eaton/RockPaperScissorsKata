@@ -22,3 +22,7 @@ TEST_F(name, Player1ShouldWinWhenPlayer1PlaysScissorsAndPlayer2PlaysPaper)
 {
    EXPECT_EQ("win", RockPaperScissorsPlay("Paper"));
 }
+TEST_F(name, Player1ShouldWinWhenPlayer1PlaysScissorsAndPlayer2PlaysPaper)
+{
+   EXPECT_EQ("win", RockPaperScissorsPlay("Paper"));
+}
