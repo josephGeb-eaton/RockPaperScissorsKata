@@ -2,7 +2,7 @@
 #define ROCKPAPERSCISSORS_H
 #include <string>
 using namespace std;
-string RockPaperScissorsPlay(string player2);
+string RockPaperScissorsPlay(const string player1, const string player2);
 
 
  

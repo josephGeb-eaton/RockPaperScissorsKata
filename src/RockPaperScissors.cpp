@@ -2,17 +2,41 @@
 #include <string>
 using namespace std;
 
-string RockPaperScissorsPlay(string player2)
+string RockPaperScissorsPlay(const string player1, const string player2)
 {
-    if (player2 == "Rock")
+    if (player1 == "Scissors" && player2 == "Rock")
     {
-        return "Lose";
+        return "Player1 Loses";
     }
-    if (player2 == "Paper")
+    if (player1 == "Scissors" && player2 == "Paper")
     {
-        return "win";
+        return "Player1 wins";
     }
-    if (player2 == "Scissors")
+    if (player1 == "Scissors" && player2 == "Scissors")
+    {
+        return "Tie";
+    }
+    if (player1 == "Paper" && player2 == "Rock")
+    {
+        return "Player1 wins";
+    }
+    if (player1 == "Paper" && player2 == "Scissors" )                   
+    {
+        return "Player1 Loses";
+    }
+    if (player1 == "Paper" && player2 == "Paper")
+    {
+        return "Tie";
+    }
+    if (player1 == "Rock" && player2 == "Paper")
+    {
+        return "Player1 Loses";
+    }
+    if (player1 == "Rock" && player2 == "Scissors")
+    {
+        return "Player1 Wins";
+    }
+    if (player1 == "Rock" && player2 == "Rock")
     {
         return "Tie";
     }
