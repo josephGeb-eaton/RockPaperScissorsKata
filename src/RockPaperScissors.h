@@ -1,14 +1,22 @@
 #ifndef ROCKPAPERSCISSORS_H
 #define ROCKPAPERSCISSORS_H
 
-#include <string>
-
 using namespace std;
 
-string RockPaperScissorsPlay(const string player1, const string player2);
+enum PlayerMoves
+{
+Rock = 0,
+Paper = 1,
+Scissors = 2
+};
 
+ enum WinOrLose
+ {
+    Player_1_Wins,
+    Player_1_Loses,
+    Tie
+ };
 
- 
-
+WinOrLose RockPaperScissorsPlay(PlayerMoves Player_1, PlayerMoves Player_2);
 
 #endif

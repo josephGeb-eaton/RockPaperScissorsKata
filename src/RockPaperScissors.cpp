@@ -1,19 +1,18 @@
 #include "RockPaperScissors.h"
-#include <string>
 using namespace std;
 
-string RockPaperScissorsPlay(const string player1, const string player2)
+WinOrLose RockPaperScissorsPlay(PlayerMoves Player_1, PlayerMoves Player_2)
 {
-    if ((player1 == "Scissors" && player2 == "Paper") || (player1 == "Paper" && player2 == "Rock") 
-    || (player1 == "Rock" && player2 == "Scissors"))
+    if ((Player_1 == Scissors && Player_2 == Paper) || (Player_1 == Paper && Player_2 == Rock) 
+    || (Player_1 == Rock && Player_2 == Scissors))
     {
-        return "Player1 Wins";
+        return Player_1_Wins;
     }
-    else if (player1 == player2)
+    else if (Player_1 == Player_2)
     {
-        return "Tie";
+        return Tie;
     }
-    return "Player1 Loses";
+    return Player_1_Loses;
     
 }
-   
+
